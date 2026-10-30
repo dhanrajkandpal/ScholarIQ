@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="EDA">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EDA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/EDA.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +107,9 @@
       <workItem from="1790145731490" duration="10000" />
       <workItem from="1790609602067" duration="3267000" />
       <workItem from="1790701076371" duration="25000" />
-      <workItem from="1790966544176" duration="2914000" />
+      <workItem from="1790966544176" duration="2958000" />
+      <workItem from="1791101604540" duration="89000" />
+      <workItem from="1793373311442" duration="3481000" />
     </task>
     <task id="LOCAL-00001" summary="logging and exception">
       <option name="closed" value="true" />
@@ -132,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790968181072</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="EDA">
+      <option name="closed" value="true" />
+      <created>1790969730450</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1790969730450</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +154,7 @@
     <MESSAGE value="Add data pipeline and ML components" />
     <MESSAGE value="Updation" />
     <MESSAGE value="Your commit message" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value="EDA" />
     <option name="LAST_COMMIT_MESSAGE" value="EDA" />
   </component>
