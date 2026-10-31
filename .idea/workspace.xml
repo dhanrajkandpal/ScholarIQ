@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="Data Ingestion + EDA">
+    <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="Data Transformation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/data_transformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_transformation.py" afterDir="false" />
     </list>
@@ -110,7 +110,7 @@
       <workItem from="1790966544176" duration="2958000" />
       <workItem from="1791101604540" duration="89000" />
       <workItem from="1793373311442" duration="3801000" />
-      <workItem from="1793451878890" duration="3974000" />
+      <workItem from="1793451878890" duration="4827000" />
     </task>
     <task id="LOCAL-00001" summary="logging and exception">
       <option name="closed" value="true" />
@@ -176,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793454833742</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Data Transformation">
+      <option name="closed" value="true" />
+      <created>1793460002206</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1793460002206</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +198,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value="EDA" />
     <MESSAGE value="Data Ingestion + EDA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data Ingestion + EDA" />
+    <MESSAGE value="Data Transformation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data Transformation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/merry_pie$logger.coverage" NAME="logger Coverage Results" MODIFIED="1793454668071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
