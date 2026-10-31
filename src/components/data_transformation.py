@@ -11,6 +11,7 @@ from src.logger import logging
 from src.utils import save_object
 import os
 
+
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join('artifacts', 'preprocessor.pkl')
@@ -78,5 +79,5 @@ class DataTransformation:
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
-        except:
-            pass
+        except Exception as e:
+            raise CustomException(e,sys)
