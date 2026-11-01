@@ -62,7 +62,7 @@ class ModelTrainer:
                 },
 
                 "Decision Tree": {
-                    "criterion": ["squared_error", "friedman_mse", "absolute_error"],
+                    "criterion": ["squared_error", "absolute_error"],
                     "max_depth": [None, 5, 10, 20, 30],
                     "min_samples_split": [2, 5, 10],
                     "min_samples_leaf": [1, 2, 4],

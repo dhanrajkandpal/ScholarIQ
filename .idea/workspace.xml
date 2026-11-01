@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="Model trainer">
+    <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="Model trainer + hyperparameter">
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EDA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/EDA.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/model_trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pipeline/predict_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipeline/predict_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -60,6 +66,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.data_ingestion.executor": "Run",
     "Python.data_transformation.executor": "Run",
@@ -85,8 +92,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dhanr\PycharmProjects\merry-pie\src" />
       <recent name="C:\Users\dhanr\PycharmProjects\merry-pie" />
+      <recent name="C:\Users\dhanr\PycharmProjects\merry-pie\src" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -114,7 +121,7 @@
       <workItem from="1791101604540" duration="89000" />
       <workItem from="1793373311442" duration="3801000" />
       <workItem from="1793451878890" duration="7232000" />
-      <workItem from="1793516089675" duration="4357000" />
+      <workItem from="1793516089675" duration="7584000" />
     </task>
     <task id="LOCAL-00001" summary="logging and exception">
       <option name="closed" value="true" />
@@ -268,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793519499262</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Model trainer + hyperparameter">
+      <option name="closed" value="true" />
+      <created>1793521694919</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1793521694919</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +311,8 @@
     <MESSAGE value="Data Transformation" />
     <MESSAGE value="Model trainer + corrections" />
     <MESSAGE value="Model trainer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model trainer" />
+    <MESSAGE value="Model trainer + hyperparameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model trainer + hyperparameter" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/merry_pie$model_trainer.coverage" NAME="model_trainer Coverage Results" MODIFIED="1793518876385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/components" />
