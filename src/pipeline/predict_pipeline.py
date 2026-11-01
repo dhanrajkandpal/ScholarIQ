@@ -1,13 +1,15 @@
 import sys
 import pandas as pd
 from src.exception import CustomException
-from src.utils import save_object
+from src.utils import load_object
 
 class PredictionPipeline:
     def __init__(self):
         pass
     def predict(self,data):
-
+        model_path = 'artifacts\model.pkl'
+        preprocessor_path = 'artifacts\preprocessor.pkl'
+        model = load_object(filepath = model_path)
 
 class CustomData:
     def __init__(
