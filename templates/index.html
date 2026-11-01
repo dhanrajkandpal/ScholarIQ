@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScholarIQ | Performance Prediction</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg: #f7f7f4;
+            --black: #191b18;
+            --secondary: #686c63;
+            --muted: #92968d;
+            --border: #dedfd8;
+            --accent: #64764b;
+            --light: #e9ebe3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--black);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav {
+            height: 76px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font: 800 22px 'Manrope', sans-serif;
+            letter-spacing: -1px;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .back-link {
+            font-size: 12px;
+            color: var(--secondary);
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        /* HEADER */
+
+        .page-header {
+            padding: 75px 0 45px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .page-header h1 {
+            font: 600 clamp(40px, 5vw, 60px) 'Manrope', sans-serif;
+            letter-spacing: -2.5px;
+            margin: 20px 0 15px;
+        }
+
+        .page-header p {
+            font-size: 14px;
+            color: var(--secondary);
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        /* MAIN LAYOUT */
+
+        .prediction-layout {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 65px;
+            padding-bottom: 100px;
+        }
+
+        .information {
+            padding-top: 10px;
+        }
+
+        .information h2 {
+            font: 600 27px 'Manrope', sans-serif;
+            line-height: 1.35;
+            margin-bottom: 17px;
+        }
+
+        .information p {
+            color: var(--secondary);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .information-divider {
+            border-top: 1px solid var(--border);
+            margin: 28px 0;
+        }
+
+        .information small {
+            color: var(--accent);
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* FORM */
+
+        .form-container {
+            border-top: 2px solid var(--black);
+        }
+
+        .form-heading {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .form-heading h3 {
+            font: 600 17px 'Manrope', sans-serif;
+        }
+
+        .form-heading span {
+            font-size: 10px;
+            color: var(--muted);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px 20px;
+            padding: 30px 0;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 12px;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--black);
+            font-family: inherit;
+            font-size: 12px;
+            outline: none;
+            border-radius: 0;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+        }
+
+        .form-group input::placeholder {
+            color: #a5a99f;
+        }
+
+        .form-note {
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 7px;
+        }
+
+        .submit-button {
+            grid-column: 1 / -1;
+            padding: 16px;
+            border: none;
+            background: var(--black);
+            color: white;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .submit-button:hover {
+            background: var(--accent);
+        }
+
+        /* RESULT */
+
+        .result {
+            margin-top: 20px;
+            padding: 25px;
+            background: var(--light);
+            border-left: 3px solid var(--accent);
+        }
+
+        .result small {
+            color: var(--accent);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .result h2 {
+            font: 600 38px 'Manrope', sans-serif;
+            margin-top: 10px;
+        }
+
+        .result p {
+            color: var(--secondary);
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 800px) {
+            .prediction-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+        }
+
+        @media(max-width: 550px) {
+            .container {
+                width: 92%;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .submit-button {
+                grid-column: auto;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="/" class="brand">Scholar<span>IQ.</span></a>
+
+        <a href="/" class="back-link">← Back to homepage</a>
+
+    </div>
+</nav>
+
+
+<main class="container">
+
+    <header class="page-header">
+
+        <div class="eyebrow">
+            Prediction Engine / 001
+        </div>
+
+        <h1>Student performance prediction.</h1>
+
+        <p>
+            Enter the student's demographic information and
+            examination scores to estimate their mathematics
+            performance using the trained regression model.
+        </p>
+
+    </header>
+
+
+    <div class="prediction-layout">
+
+        <aside class="information">
+
+            <h2>
+                An estimate based on academic data.
+            </h2>
+
+            <p>
+                This model analyses seven input variables,
+                including educational background and reading
+                and writing examination scores.
+            </p>
+
+            <div class="information-divider"></div>
+
+            <small>Prediction Target</small>
+
+            <h2 style="margin-top:12px;">
+                Mathematics Score
+            </h2>
+
+            <p>
+                The output represents an estimated mathematics
+                examination score on a scale of 0 to 100.
+            </p>
+
+            <div class="information-divider"></div>
+
+            <small>Model Type</small>
+
+            <p style="margin-top:12px;">
+                Supervised Machine Learning<br>
+                Regression Analysis
+            </p>
+
+        </aside>
+
+
+        <div class="form-container">
+
+            <div class="form-heading">
+                <h3>Student Information</h3>
+                <span>ALL FIELDS REQUIRED</span>
+            </div>
+
+
+            <form action="/predictdata" method="POST" class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="gender">Gender</label>
+
+                    <select id="gender" name="gender" required>
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="race">Race / Ethnicity</label>
+
+                    <select id="race" name="race_ethnicity" required>
+                        <option value="">Select group</option>
+                        <option value="group A">Group A</option>
+                        <option value="group B">Group B</option>
+                        <option value="group C">Group C</option>
+                        <option value="group D">Group D</option>
+                        <option value="group E">Group E</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="education">Parental Education</label>
+
+                    <select id="education" name="parental_level_of_education" required>
+                        <option value="">Select education</option>
+                        <option value="some high school">Some High School</option>
+                        <option value="high school">High School</option>
+                        <option value="some college">Some College</option>
+                        <option value="associate's degree">Associate's Degree</option>
+                        <option value="bachelor's degree">Bachelor's Degree</option>
+                        <option value="master's degree">Master's Degree</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="lunch">Lunch Type</label>
+
+                    <select id="lunch" name="lunch" required>
+                        <option value="">Select lunch type</option>
+                        <option value="standard">Standard</option>
+                        <option value="free/reduced">Free / Reduced</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="preparation">Test Preparation Course</label>
+
+                    <select id="preparation" name="test_preparation_course" required>
+                        <option value="">Select status</option>
+                        <option value="completed">Completed</option>
+                        <option value="none">None</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="reading">Reading Score</label>
+
+                    <input
+                        type="number"
+                        id="reading"
+                        name="reading_score"
+                        min="0"
+                        max="100"
+                        placeholder="Enter score (0-100)"
+                        required
+                    >
+
+                    <div class="form-note">Numerical score between 0 and 100.</div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="writing">Writing Score</label>
+
+                    <input
+                        type="number"
+                        id="writing"
+                        name="writing_score"
+                        min="0"
+                        max="100"
+                        placeholder="Enter score (0-100)"
+                        required
+                    >
+
+                    <div class="form-note">Numerical score between 0 and 100.</div>
+
+                </div>
+
+
+                <button type="submit" class="submit-button">
+                    Generate Mathematics Prediction →
+                </button>
+
+            </form>
+
+
+            {% if results is defined and results is not none %}
+
+            <div class="result">
+
+                <small>Predicted Mathematics Score</small>
+
+                <h2>{{ "%.2f"|format(results) }} / 100</h2>
+
+                <p>
+                    Prediction generated successfully by the trained model.
+                </p>
+
+            </div>
+
+            {% endif %}
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+    <div class="container footer-inner">
+        <span>© 2026 ScholarIQ. Student Performance Analysis.</span>
+        <span>Built with Python & Machine Learning.</span>
+    </div>
+</footer>
+
+</body>
+</html>

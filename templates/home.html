@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarIQ | Student Performance Analysis</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f7f7f4;
+            --black: #191b18;
+            --secondary: #686c63;
+            --muted: #92968d;
+            --border: #dedfd8;
+            --accent: #64764b;
+            --light: #e9ebe3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--black);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        nav {
+            height: 76px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font: 800 22px 'Manrope', sans-serif;
+            letter-spacing: -1px;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            color: var(--secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--black);
+            color: white !important;
+            padding: 12px 18px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 570px;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 75px;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font: 600 clamp(48px, 6vw, 78px)/1.08 'Manrope', sans-serif;
+            letter-spacing: -4px;
+            margin: 25px 0;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            max-width: 540px;
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--secondary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            padding: 14px 21px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            transition: .2s;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--black);
+        }
+
+        /* CHART */
+
+        .visual {
+            background: var(--light);
+            padding: 30px;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .visual-heading {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+        }
+
+        .chart {
+            height: 170px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            gap: 15px;
+            border-bottom: 1px solid #b9beb0;
+        }
+
+        .bar {
+            flex: 1;
+            background: var(--accent);
+        }
+
+        .bar:nth-child(even) {
+            background: #aab49c;
+        }
+
+        .bar:nth-child(3n) {
+            background: #c3c8ba;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-around;
+            font-size: 10px;
+            color: var(--secondary);
+            margin-top: 10px;
+        }
+
+        .visual-footer {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #cbd0c4;
+            padding-top: 17px;
+            font-size: 11px;
+            color: var(--secondary);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 85px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-heading {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .section-number {
+            font-size: 11px;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font: 600 36px 'Manrope', sans-serif;
+            letter-spacing: -1.5px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            font-size: 13px;
+            line-height: 1.9;
+            color: var(--secondary);
+            max-width: 650px;
+        }
+
+        /* STATISTICS */
+
+        .dataset {
+            background: #eeefe9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid #cfd1c7;
+            border-bottom: 1px solid #cfd1c7;
+        }
+
+        .stat {
+            padding: 30px 22px;
+            border-right: 1px solid #cfd1c7;
+        }
+
+        .stat:last-child {
+            border: none;
+        }
+
+        .stat h3 {
+            font: 600 42px 'Manrope', sans-serif;
+            letter-spacing: -2px;
+        }
+
+        .stat p {
+            font-size: 10px;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* FEATURES */
+
+        .feature-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .feature-table th {
+            text-align: left;
+            font-size: 10px;
+            color: var(--muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature-table td {
+            padding: 19px 16px;
+            font-size: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature-table tr:hover {
+            background: #eeefe9;
+        }
+
+        .feature-table td:first-child {
+            font-weight: 600;
+        }
+
+        .tag {
+            background: var(--light);
+            color: var(--accent);
+            padding: 5px 9px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        /* METHODOLOGY */
+
+        .workflow {
+            background: #eeefe9;
+        }
+
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid #cfd1c7;
+            border-bottom: 1px solid #cfd1c7;
+        }
+
+        .workflow-item {
+            padding: 28px 22px;
+            border-right: 1px solid #cfd1c7;
+        }
+
+        .workflow-item:last-child {
+            border: none;
+        }
+
+        .workflow-item span {
+            color: var(--accent);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .workflow-item h3 {
+            font: 600 17px 'Manrope', sans-serif;
+            margin: 25px 0 12px;
+        }
+
+        .workflow-item p {
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--secondary);
+        }
+
+        /* CALL TO ACTION */
+
+        .cta {
+            background: var(--black);
+            color: white;
+            padding: 75px 0;
+        }
+
+        .cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cta h2 {
+            font: 600 35px 'Manrope', sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #a5a99f;
+            font-size: 13px;
+        }
+
+        .cta .btn {
+            background: #b1c39a;
+            color: var(--black);
+            white-space: nowrap;
+        }
+
+        footer {
+            background: var(--black);
+            border-top: 1px solid #42463e;
+            color: #a5a99f;
+            padding: 25px 0;
+            font-size: 11px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 850px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .workflow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-content {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .container {
+                width: 92%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid #cfd1c7;
+            }
+
+            .workflow-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-item {
+                border-right: none;
+                border-bottom: 1px solid #cfd1c7;
+            }
+
+            .workflow-item:last-child {
+                border-bottom: none;
+            }
+
+            .feature-table th,
+            .feature-table td {
+                padding: 12px 6px;
+                font-size: 10px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="/" class="brand">Scholar<span>IQ.</span></a>
+
+        <div class="nav-links">
+            <a href="#overview">Overview</a>
+            <a href="#dataset">Dataset</a>
+            <a href="#methodology">Methodology</a>
+            <a href="/predictdata" class="nav-cta">Prediction →</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<main class="container">
+
+    <div class="hero">
+
+        <div>
+
+            <div class="eyebrow">
+                Machine Learning / Regression Analysis
+            </div>
+
+            <h1>
+                Measuring<br>
+                academic <span>potential.</span>
+            </h1>
+
+            <p>
+                An analytical approach to understanding student
+                performance through demographic, educational and
+                examination data. Explore the factors associated
+                with academic outcomes and predict mathematics scores
+                using regression models.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/predictdata" class="btn btn-primary">
+                    Explore Prediction →
+                </a>
+
+                <a href="#overview" class="btn btn-secondary">
+                    Project Overview
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="visual">
+
+            <div class="visual-heading">
+                <span>Academic Data / 001</span>
+                <span>Dataset Overview</span>
+            </div>
+
+            <div>
+                <div class="chart">
+                    <div class="bar" style="height:48%"></div>
+                    <div class="bar" style="height:64%"></div>
+                    <div class="bar" style="height:55%"></div>
+                    <div class="bar" style="height:78%"></div>
+                    <div class="bar" style="height:68%"></div>
+                    <div class="bar" style="height:88%"></div>
+                    <div class="bar" style="height:73%"></div>
+                    <div class="bar" style="height:94%"></div>
+                </div>
+
+                <div class="chart-labels">
+                    <span>01</span>
+                    <span>02</span>
+                    <span>03</span>
+                    <span>04</span>
+                    <span>05</span>
+                    <span>06</span>
+                    <span>07</span>
+                    <span>08</span>
+                </div>
+            </div>
+
+            <div class="visual-footer">
+                <span>Student performance dataset</span>
+                <span>1,000 records</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<section id="overview">
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">01 / OVERVIEW</div>
+
+            <div>
+                <h2>From educational data to meaningful predictions.</h2>
+
+                <p>
+                    This project investigates the relationship between
+                    student demographics, educational background and
+                    examination performance through exploratory data
+                    analysis and supervised machine learning.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="dataset" id="dataset">
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">02 / DATASET</div>
+
+            <div>
+                <h2>A closer look at the data.</h2>
+
+                <p>
+                    The original dataset contains 1,000 student
+                    observations and eight attributes covering
+                    demographic information, educational background
+                    and examination performance.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>1,000</h3>
+                <p>Student Records</p>
+            </div>
+
+            <div class="stat">
+                <h3>08</h3>
+                <p>Total Attributes</p>
+            </div>
+
+            <div class="stat">
+                <h3>05</h3>
+                <p>Categorical Features</p>
+            </div>
+
+            <div class="stat">
+                <h3>03</h3>
+                <p>Numerical Features</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section>
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">03 / VARIABLES</div>
+
+            <div>
+                <h2>Understanding the variables.</h2>
+
+                <p>
+                    Seven input variables are used to predict
+                    mathematics examination performance.
+                </p>
+            </div>
+
+        </div>
+
+        <table class="feature-table">
+
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                    <th>Data Type</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>Student gender</td>
+                    <td>String</td>
+                    <td><span class="tag">Input</span></td>
+                </tr>
+
+                <tr>
+                    <td>Race / Ethnicity</td>
+                    <td>Student group classification</td>
+                    <td>String</td>
+                    <td><span class="tag">Input</span></td>
+                </tr>
+
+                <tr>
+                    <td>Parental Education</td>
+                    <td>Highest parental education level</td>
+                    <td>String</td>
+                    <td><span class="tag">Input</span></td>
+                </tr>
+
+                <tr>
+                    <td>Lunch</td>
+                    <td>Lunch programme category</td>
+                    <td>String</td>
+                    <td><span class="tag">Input</span></td>
+                </tr>
+
+                <tr>
+                    <td>Test Preparation</td>
+                    <td>Course completion status</td>
+                    <td>String</td>
+                    <td><span class="tag">Input</span></td>
+                </tr>
+
+                <tr>
+                    <td>Reading Score</td>
+                    <td>Reading examination score</td>
+                    <td>Integer</td>
+                    <td><span class="tag">Input</span></td>
+                </tr>
+
+                <tr>
+                    <td>Writing Score</td>
+                    <td>Writing examination score</td>
+                    <td>Integer</td>
+                    <td><span class="tag">Input</span></td>
+                </tr>
+
+                <tr>
+                    <td>Math Score</td>
+                    <td>Mathematics examination score</td>
+                    <td>Integer</td>
+                    <td><span class="tag">Target</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+</section>
+
+
+<section class="workflow" id="methodology">
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">04 / METHODOLOGY</div>
+
+            <div>
+                <h2>A structured machine learning workflow.</h2>
+
+                <p>
+                    An end-to-end regression pipeline, from
+                    understanding the original data to evaluating
+                    trained models.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="workflow-grid">
+
+            <div class="workflow-item">
+                <span>01 — ANALYSIS</span>
+                <h3>Exploratory Analysis</h3>
+                <p>Investigating distributions, correlations and relationships in the dataset.</p>
+            </div>
+
+            <div class="workflow-item">
+                <span>02 — PREPARATION</span>
+                <h3>Data Preprocessing</h3>
+                <p>Handling categorical and numerical features through appropriate transformations.</p>
+            </div>
+
+            <div class="workflow-item">
+                <span>03 — MODELLING</span>
+                <h3>Model Training</h3>
+                <p>Training multiple regression algorithms and exploring hyperparameter optimisation.</p>
+            </div>
+
+            <div class="workflow-item">
+                <span>04 — EVALUATION</span>
+                <h3>Model Selection</h3>
+                <p>Comparing model performance using R² and selecting the best-performing model.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="cta">
+    <div class="container">
+
+        <div class="cta-content">
+
+            <div>
+                <h2>Explore the prediction engine.</h2>
+                <p>Provide student information and estimate mathematics performance.</p>
+            </div>
+
+            <a href="/predictdata" class="btn">
+                Start Prediction →
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<footer>
+    <div class="container footer-inner">
+        <span>© 2026 ScholarIQ. Student Performance Analysis.</span>
+        <span>Built with Python & Machine Learning.</span>
+    </div>
+</footer>
+
+</body>
+</html>
