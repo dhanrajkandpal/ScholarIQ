@@ -36,9 +36,78 @@ class ModelTrainer:
                 "KNN": KNeighborsRegressor(),
                 "XGBoost": XGBRegressor(),
                 "CATBoost": CatBoostRegressor(),
-                "ADA Boost": AdaBoostRegressor(),
             }
-            model_report:dict = evaluate_model(x_train=x_train,y_train=y_train,x_test=x_test,y_test=y_test,models=models)
+            params = {
+                "Random Forest": {
+                    "n_estimators": [100, 200, 300],
+                    "max_depth": [None, 5, 10, 20],
+                    "min_samples_split": [2, 5, 10],
+                    "min_samples_leaf": [1, 2, 4],
+                    "max_features": ["sqrt", "log2", 1.0]
+                },
+
+                "Gradient Boosting": {
+                    "n_estimators": [100, 200, 300],
+                    "learning_rate": [0.01, 0.05, 0.1, 0.2],
+                    "max_depth": [2, 3, 5],
+                    "min_samples_split": [2, 5, 10],
+                    "min_samples_leaf": [1, 2, 4],
+                    "subsample": [0.8, 0.9, 1.0]
+                },
+
+                "AdaBoost": {
+                    "n_estimators": [50, 100, 200, 300],
+                    "learning_rate": [0.01, 0.05, 0.1, 0.5, 1.0],
+                    "loss": ["linear", "square", "exponential"]
+                },
+
+                "Decision Tree": {
+                    "criterion": ["squared_error", "friedman_mse", "absolute_error"],
+                    "max_depth": [None, 5, 10, 20, 30],
+                    "min_samples_split": [2, 5, 10],
+                    "min_samples_leaf": [1, 2, 4],
+                    "max_features": [None, "sqrt", "log2"]
+                },
+
+                "Linear Regression": {
+                    "fit_intercept": [True, False],
+                    "positive": [True, False]
+                },
+
+                "KNN": {
+                    "n_neighbors": [3, 5, 7, 9, 11, 15],
+                    "weights": ["uniform", "distance"],
+                    "algorithm": ["auto", "ball_tree", "kd_tree", "brute"],
+                    "leaf_size": [20, 30, 40],
+                    "p": [1, 2]
+                },
+
+                "XGBoost": {
+                    "n_estimators": [100, 200, 300],
+                    "max_depth": [3, 5, 7, 10],
+                    "learning_rate": [0.01, 0.05, 0.1, 0.2],
+                    "subsample": [0.7, 0.8, 1.0],
+                    "colsample_bytree": [0.7, 0.8, 1.0],
+                    "min_child_weight": [1, 3, 5],
+                    "gamma": [0, 0.1, 0.2]
+                },
+
+                "CATBoost": {
+                    "iterations": [500, 800, 1000],
+                    "depth": [4, 6, 8, 10],
+                    "learning_rate": [0.01, 0.03, 0.05, 0.1],
+                    "l2_leaf_reg": [1, 3, 5, 7],
+                    "verbose": [False]
+                }
+            }
+            model_report:dict = evaluate_model(
+                x_train=x_train,
+                y_train=y_train,
+                x_test=x_test,
+                y_test=y_test,
+                models=models,
+                param = params,
+            )
             #to get best model score from dict
             best_model_score = max(sorted(model_report.values()))
             #to get the best model from dict

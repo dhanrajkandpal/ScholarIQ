@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="Model trainer + corrections">
+    <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="Model trainer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/model_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +114,7 @@
       <workItem from="1791101604540" duration="89000" />
       <workItem from="1793373311442" duration="3801000" />
       <workItem from="1793451878890" duration="7232000" />
-      <workItem from="1793516089675" duration="3148000" />
+      <workItem from="1793516089675" duration="4357000" />
     </task>
     <task id="LOCAL-00001" summary="logging and exception">
       <option name="closed" value="true" />
@@ -250,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1793519231559</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Model trainer">
+      <option name="closed" value="true" />
+      <created>1793519353989</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1793519353989</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Model trainer">
+      <option name="closed" value="true" />
+      <created>1793519499262</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1793519499262</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,9 +294,9 @@
     <MESSAGE value="EDA" />
     <MESSAGE value="Data Ingestion + EDA" />
     <MESSAGE value="Data Transformation" />
-    <MESSAGE value="Model trainer" />
     <MESSAGE value="Model trainer + corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model trainer + corrections" />
+    <MESSAGE value="Model trainer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model trainer" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/merry_pie$model_trainer.coverage" NAME="model_trainer Coverage Results" MODIFIED="1793518876385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/components" />
