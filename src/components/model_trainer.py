@@ -53,5 +53,7 @@ class ModelTrainer:
                         )
             predicted = best_model.predict(x_test)
             r2 = r2_score(y_test,predicted)
+            print(f"\nBest Model: {best_model_name}")
+            print(f"Best Model R2 Score: {r2:.4f}")
         except Exception as e:
             raise CustomException(e,sys)
