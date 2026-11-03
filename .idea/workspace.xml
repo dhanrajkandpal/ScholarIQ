@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pipeline/predict_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipeline/predict_pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +120,7 @@
       <workItem from="1793451878890" duration="7232000" />
       <workItem from="1793516089675" duration="8310000" />
       <workItem from="1793525853001" duration="1074000" />
-      <workItem from="1793713417682" duration="650000" />
+      <workItem from="1793713417682" duration="1671000" />
     </task>
     <task id="LOCAL-00001" summary="logging and exception">
       <option name="closed" value="true" />
@@ -320,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793713795495</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Update">
+      <option name="closed" value="true" />
+      <created>1793714373897</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1793714373897</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
