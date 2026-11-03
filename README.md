@@ -103,7 +103,7 @@ Each model is tuned with `GridSearchCV` using 4-fold cross-validation and evalua
 ## Project Structure
 
 ```text
-scholariq/
+ScholarIQ/
 │
 ├── app.py                         # Flask application and routes
 ├── requirements.txt               # Project dependencies
@@ -149,8 +149,8 @@ scholariq/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/scholariq.git
-cd scholariq
+git clone https://github.com/dhanrajkandpal/ScholarIQ.git
+cd ScholarIQ
 ```
 
 ### 2. Create a virtual environment and install dependencies
@@ -220,10 +220,10 @@ Suggestions, issues, and pull requests are welcome. If you have an idea to make 
 
 ## Author
 
-**Dhanraj**
+**Dhanraj Kandpal**
 BCA student exploring machine learning, web development, and the engineering behind both.
 
-[GitHub](https://github.com/<your-username>) · [Live Demo](https://scholariq-rzps.onrender.com/)
+[GitHub](https://github.com/dhanrajkandpal) · [Live Demo](https://scholariq-rzps.onrender.com/)
 
 ---
 
