@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="predictin pipeline">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pipeline/predict_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipeline/predict_pipeline.py" afterDir="false" />
+    <list default="true" id="c6cf192d-d5d0-4ad7-a9c1-9757dc51b3b0" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,7 @@
       <workItem from="1793451878890" duration="7232000" />
       <workItem from="1793516089675" duration="8310000" />
       <workItem from="1793525853001" duration="1074000" />
-      <workItem from="1793713417682" duration="335000" />
+      <workItem from="1793713417682" duration="650000" />
     </task>
     <task id="LOCAL-00001" summary="logging and exception">
       <option name="closed" value="true" />
@@ -314,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793526091365</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Update">
+      <option name="closed" value="true" />
+      <created>1793713795495</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1793713795495</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +353,8 @@
     <MESSAGE value="Front end" />
     <MESSAGE value="updates" />
     <MESSAGE value="predictin pipeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="predictin pipeline" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/merry_pie$app.coverage" NAME="app Coverage Results" MODIFIED="1793526680375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
